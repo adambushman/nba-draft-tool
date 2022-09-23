@@ -1,0 +1,16 @@
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #f6ee26;
+}
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
+}
+
+.control-label {
+  color: #FFFFFF;
+}
+
+.shiny-input-container {
+  color: #f6ee26;
+}
