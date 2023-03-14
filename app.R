@@ -121,7 +121,7 @@ server <- function(input, output, session) {
   # Reactable Tables
   players <- reactiveValues(
     data = data.frame(
-      name = c('Stanley Johnson', 'Mike Conley', 'Malik Beasley', 'Jarred Vanderbilt', 'Jared Butler', 'Nickeil Alexander-Walker', 'Udoka Azubuike', 'Leandro Bolmaro', 'Talen Horton-Tucker', 'Rudy Gay', 'Jordan Clarkson', 'Lauri Markkanen', 'Simone Fontecchio', 'Walker Kessler', 'Ochai Agbaji', 'Collin Sexton', 'Saben Lee', 'Kelly Olynyk')
+      name = c('Collin Sexton', 'Lauri Markkanen', 'Jarred Vanderbilt', 'Mike Conley', 'Malik Beasley', 'Jordan Clarkson', 'Rudy Gay', 'Kelly Olynyk', 'Ochai Agbaji', 'Walker Kessler', 'Simone Fontecchio', 'Nickeil Alexander-Walker', 'Cody Zeller', 'Talen Horton-Tucker', 'Jared Butler', 'Udoka Azubuike', 'Stanley Johnson', 'Leandro Bolmaro', 'Saben Lee')
     )
   )
 
@@ -190,7 +190,8 @@ server <- function(input, output, session) {
       datatable(players$data,
                 rownames = FALSE,
                 selection = 'single',
-                options = list(dom = 'tp',
+                options = list(dom = 't',
+                               pageLength = -1,
                                initComplete = JS(
                                  "function(settings, json) {",
                                  "$(this.api().table().header()).css({'background-color': '#f6ee26', 'color': '#000000'});",
@@ -202,7 +203,8 @@ server <- function(input, output, session) {
       datatable(picks$data,
                 rownames = FALSE,
                 selection = 'single',
-                options = list(dom = 'tp',
+                options = list(dom = 't',
+                               pageLength = -1,
                                initComplete = JS(
                                  "function(settings, json) {",
                                  "$(this.api().table().header()).css({'background-color': '#f6ee26', 'color': '#000000'});",
@@ -215,7 +217,8 @@ server <- function(input, output, session) {
       datatable(other$data,
                 rownames = FALSE,
                 selection = 'single',
-                options = list(dom = 'tp',
+                options = list(dom = 't',
+                               pageLength = -1,
                                initComplete = JS(
                                  "function(settings, json) {",
                                  "$(this.api().table().header()).css({'background-color': '#f6ee26', 'color': '#000000'});",
@@ -226,7 +229,8 @@ server <- function(input, output, session) {
     output$selectionsT <- renderDT({
       datatable(selections$data %>% filter(name != "test"),
                 selection = 'none',
-                options = list(dom = 'tp',
+                options = list(dom = 't',
+                               pageLength = -1,
                                initComplete = JS(
                                  "function(settings, json) {",
                                  "$(this.api().table().header()).css({'background-color': '#f6ee26', 'color': '#000000'});",
